@@ -15,6 +15,7 @@ import { AuthService } from './shared/services';
 import { DescriptionComponent } from './description/description.component';
 import { ReviewComponent } from './review/review.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 export function appInitializerFactory(authService: AuthService) {
   return () => authService.checkTheUserOnTheFirstLoad();
@@ -22,7 +23,7 @@ export function appInitializerFactory(authService: AuthService) {
 
 @NgModule({
   imports: [BrowserAnimationsModule, HttpClientModule, SharedModule, AppRoutingModule],
-  declarations: [AppComponent, HeaderComponent, HomeComponent, DescriptionComponent, ReviewComponent, MainPageComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, DescriptionComponent, ReviewComponent, MainPageComponent, FooterComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
