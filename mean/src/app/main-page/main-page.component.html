@@ -6,9 +6,9 @@
               <div class="row align-items-center">
                   <div class="col-xl-12 col-md-12">
                       <div class="slider_text text-center">
-                          <h3>Indonesia</h3>
-                          <p>Pixel perfect design with awesome contents</p>
-                          <a href="#" class="boxed-btn3">Explore Now</a>
+                          <h3>อุบลราชธานี</h3>
+                          <!-- <p>Pixel perfect design with awesome contents</p> -->
+                          <!-- <a href="#" class="boxed-btn3">Explore Now</a> -->
                       </div>
                   </div>
               </div>
@@ -19,9 +19,9 @@
               <div class="row align-items-center">
                   <div class="col-xl-12 col-md-12">
                       <div class="slider_text text-center">
-                          <h3>Australia</h3>
-                          <p>Pixel perfect design with awesome contents</p>
-                          <a href="#" class="boxed-btn3">Explore Now</a>
+                          <h3>เลย</h3>
+                          <!-- <p>Pixel perfect design with awesome contents</p> -->
+                          <!-- <a href="#" class="boxed-btn3">Explore Now</a> -->
                       </div>
                   </div>
               </div>
@@ -32,9 +32,9 @@
               <div class="row align-items-center">
                   <div class="col-xl-12 col-md-12">
                       <div class="slider_text text-center">
-                          <h3>Switzerland</h3>
-                          <p>Pixel perfect design with awesome contents</p>
-                          <a href="#" class="boxed-btn3">Explore Now</a>
+                          <h3>ขอนแก่น</h3>
+                          <!-- <p>Pixel perfect design with awesome contents</p> -->
+                          <!-- <a href="#" class="boxed-btn3">Explore Now</a> -->
                       </div>
                   </div>
               </div>
@@ -88,7 +88,7 @@
           <div class="col-lg-6">
               <div class="section_title text-center mb_70">
                   <h3>สถานที่ท่องเที่ยวในภาคอีสาน</h3>
-                  <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
+                  <p>เราคนไทยมีความโชคดีตรงที่ประเทศของเรามีสถานที่ท่องเที่ยวให้เที่ยวเยอะมาก เอาแค่เฉพาะภาคอีสานเองก็นับไม่ถ้วนแล้ว ซึ่งวันนี้ E-san Travel มี 40 ที่เที่ยวในภาคอีสาน เอาใจสายเขียวคนรักธรรมชาติมาบอกต่อกัน บอกเลยว่าภาคอีสานมีความอุดมสมบูรณ์ทางธรรมชาติอยู่หลายแห่ง แต่ละแห่งก็สวยไปหมด</p>
               </div>
           </div>
       </div>
@@ -96,10 +96,10 @@
           <div class="col-lg-4 col-md-6" *ngFor="let item of province; let i = index;">
               <div class="single_destination">
                   <div class="thumb">
-                      <img src="../../assets/img/destination/1.png" alt="">
+                      <img src="{{item.img}}" alt="">
                   </div>
                   <div class="content">
-                      <p class="d-flex align-items-center">{{item.name}} <a href="travel_destination.html">  07 Places</a> </p>
+                      <p class="d-flex align-items-center">{{item.name}} <a href="travel_destination.html">  {{item.totalPlace}} Places</a> </p>
 
                   </div>
               </div>
@@ -205,21 +205,20 @@
       <div class="row justify-content-center">
           <div class="col-lg-6">
               <div class="section_title text-center mb_70">
-                  <h3>Popular Places</h3>
+                  <h3>สถานที่ท่องเที่ยวที่เป็นที่นิยมในภาคอีสาน</h3>
                   <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
               </div>
           </div>
       </div>
       <div class="row">
-          <div class="col-lg-4 col-md-6">
+          <div class="col-lg-4 col-md-6" *ngFor="let item of PopularPlaces; let i = index;">
               <div class="single_place">
                   <div class="thumb">
-                      <img src="../../assets/img/place/1.png" alt="">
-                      <a href="#" class="prise">$500</a>
+                      <img src="{{item.img}}" alt="">
                   </div>
                   <div class="place_info">
-                      <a href="destination_details.html"><h3>California</h3></a>
-                      <p>United State of America</p>
+                      <a href="destination_details.html"><h3>{{item.name}}</h3></a>
+                      <p>{{item.province}}</p>
                       <div class="rating_days d-flex justify-content-between">
                           <span class="d-flex justify-content-center align-items-center">
                                <i class="fa fa-star"></i>
@@ -237,7 +236,7 @@
                   </div>
               </div>
           </div>
-          <div class="col-lg-4 col-md-6">
+          <!-- <div class="col-lg-4 col-md-6">
               <div class="single_place">
                   <div class="thumb">
                       <img src="../../assets/img/place/2.png" alt="">
@@ -366,7 +365,7 @@
                       </div>
                   </div>
               </div>
-          </div>
+          </div> -->
       </div>
       <div class="row">
           <div class="col-lg-12">
