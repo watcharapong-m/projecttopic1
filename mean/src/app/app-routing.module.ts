@@ -1,3 +1,5 @@
+import { PopularPlaceComponent } from './popular-place/popular-place.component';
+import { AllPlaceComponent } from './all-place/all-place.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ReviewComponent } from './review/review.component';
 import { DescriptionComponent } from './description/description.component';
@@ -8,11 +10,11 @@ import { AuthGuard } from './shared/guards';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: HomeComponent,
-  //   canActivate: [AuthGuard],
-  // },
+  {
+    path: 'home',
+    component: HomeComponent,
+    // canActivate: [AuthGuard],
+  },
   {
     path: '',
     component: MainPageComponent,
@@ -24,6 +26,14 @@ const routes: Routes = [
   {
     path: 'review',
     component: ReviewComponent,
+  },
+  {
+    path: 'province/:dataObj',
+    component: AllPlaceComponent,
+  },
+  {
+    path: 'popular',
+    component: PopularPlaceComponent,
   },
   {
     path: 'auth',

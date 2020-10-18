@@ -93,16 +93,18 @@
           </div>
       </div>
       <div class="row">
-          <div class="col-lg-4 col-md-6" *ngFor="let item of province; let i = index;">
+          <div class="col-lg-4 col-md-6" *ngFor="let item of place; let i = index;">
+            <!-- <p>{{ i+1 }}</p> -->
+            <a (click)="goto(i)">
               <div class="single_destination">
-                  <div class="thumb">
-                      <img src="{{item.img}}" alt="">
-                  </div>
-                  <div class="content">
-                      <p class="d-flex align-items-center">{{item.name}} <a href="travel_destination.html">  {{item.totalPlace}} Places</a> </p>
-
-                  </div>
+                <div class="thumb">
+                  <img src="{{item.img}}" alt="">
+                </div>
+                <div class="content">
+                  <p class class="d-flex align-items-center">{{item.name}} <a>  {{item.totalPlace}} Places</a> </p>
+                </div>
               </div>
+            </a>
           </div>
           <!-- <div class="col-lg-4 col-md-6">
               <div class="single_destination">
@@ -171,16 +173,16 @@
           <div class="col-lg-10">
               <div class="row align-items-center">
                   <div class="col-lg-5">
-                      <div class="newsletter_text">
+                      <!-- <div class="newsletter_text">
                           <h4>Subscribe Our Newsletter</h4>
                           <p>Subscribe newsletter to get offers and about
                               new places to discover.</p>
-                      </div>
+                      </div> -->
                   </div>
                   <div class="col-lg-7">
                       <div class="mail_form">
                           <div class="row no-gutters">
-                              <div class="col-lg-9 col-md-8">
+                              <!-- <div class="col-lg-9 col-md-8">
                                   <div class="newsletter_field">
                                       <input type="email" placeholder="Your mail" >
                                   </div>
@@ -189,7 +191,7 @@
                                   <div class="newsletter_btn">
                                       <button class="boxed-btn4 " type="submit" >Subscribe</button>
                                   </div>
-                              </div>
+                              </div> -->
                           </div>
                       </div>
                   </div>
@@ -211,7 +213,7 @@
           </div>
       </div>
       <div class="row">
-          <div class="col-lg-4 col-md-6" *ngFor="let item of PopularPlaces; let i = index;">
+          <div class="col-lg-4 col-md-6" *ngFor="let item of popularplaces; let i = index;">
               <div class="single_place">
                   <div class="thumb">
                       <img src="{{item.img}}" alt="">
@@ -378,7 +380,7 @@
 </div>
 
 
-<div class="video_area video_bg overlay">
+<!-- <div class="video_area video_bg overlay">
   <div class="container">
       <div class="row">
           <div class="col-lg-12">
@@ -393,10 +395,10 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 
 
-<div class="travel_variation_area">
+<!-- <div class="travel_variation_area">
   <div class="container">
       <div class="row">
           <div class="col-lg-4 col-md-6">
@@ -428,11 +430,11 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 
 
 <!-- testimonial_area  -->
-<div class="testimonial_area">
+<!-- <div class="testimonial_area">
   <div class="container">
       <div class="row">
           <div class="col-xl-12">
@@ -486,11 +488,11 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 <!-- /testimonial_area  -->
 
 
-<div class="recent_trip_area">
+<!-- <div class="recent_trip_area">
   <div class="container">
       <div class="row justify-content-center">
           <div class="col-lg-6">
@@ -550,6 +552,6 @@
           </div>
       </div>
   </div>
-</div>
+</div> -->
 
 <app-footer></app-footer>

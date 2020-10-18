@@ -62,7 +62,7 @@
                 <div class="number">
                   <a style="color: gray;" class="links side" routerLink="/auth/login" *ngIf="!user">Login</a>
                   <div>
-                    <a class="links side" *ngIf="user" [matMenuTriggerFor]="menu">
+                    <a class="links side" *ngIf="user" [matMenuTriggerFor]="menu" style="color: black;">
                       <mat-icon>account_circle</mat-icon>{{ user.fullname }}
                     </a>
                     <mat-menu #menu="matMenu">
