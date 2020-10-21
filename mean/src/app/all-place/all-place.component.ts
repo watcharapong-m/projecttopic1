@@ -17,27 +17,33 @@ export class AllPlaceComponent implements OnInit {
   test = [
     {
       id: 1,
+      name: 'ขอนแก่น',
       place: [
         {
           id: 1,
-          name: 'x'
+          name: 'x',
+          img: 'xxx'
         },
         {
           id: 2,
-          name: 'y'
+          name: 'y',
+          img: 'xxx'
         },
       ]
     },
     {
       id: 2,
+      name: 'ชัยภูมิ',
       place: [
         {
           id: 1,
-          name: 'a'
+          name: 'a',
+          img: 'xxx'
         },
         {
           id: 2,
-          name: 'b'
+          name: 'b',
+          img: 'xxx'
         },
       ]
     },

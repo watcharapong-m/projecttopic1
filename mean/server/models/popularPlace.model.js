@@ -13,7 +13,19 @@ const PoppularPlaceSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  img: {
+  description: {
+    type: String,
+    required: true
+  },
+  img1: {
+    type: String,
+    required: true
+  },
+  img2: {
+    type: String,
+    required: true
+  },
+  img3: {
     type: String,
     required: true
   },

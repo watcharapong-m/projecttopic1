@@ -1,3 +1,4 @@
+import { Province } from './../model/province';
 // import { Place } from '@app/model/place';
 import { POPULARPLACES } from './../mock/mock-popular-place';
 import { PLACES } from './../mock/mock-place';
@@ -20,6 +21,7 @@ export class MainPageComponent implements OnInit {
 
   place: any = [];
   popularplaces: any = [];
+  province: any = [];
 
   test = [
     {
@@ -69,6 +71,13 @@ export class MainPageComponent implements OnInit {
       this.popularplaces = data;
       console.log('data popular =', data);
       console.log('popular place =', this.popularplaces);
+    });
+
+    this.http.get('/api/province/all').subscribe(data => {
+      // อ่านค่าจาก JSON response ที่ส่งออกมา
+      this.province = data;
+      console.log('data province =', data);
+      console.log('province =', this.province);
     });
   }
 

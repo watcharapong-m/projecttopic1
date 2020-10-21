@@ -6,7 +6,10 @@ const popularPlaceSchema = Joi.object({
   id: Joi.number().required(),
   name: Joi.string().required(),
   province: Joi.string().required(),
-  img: Joi.string().required(),
+  description: Joi.string().required(),
+  img1: Joi.string().required(),
+  img2: Joi.string().required(),
+  img3: Joi.string().required(),
 })
 
 
