@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AuthGuard } from './shared/guards';
 import { HomeComponent } from './home/home.component';
+import { PlaceComponent } from './place/place.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'popular',
     component: PopularPlaceComponent,
+  },
+  {
+    path: 'place',
+    component: PlaceComponent,
   },
   {
     path: 'auth',

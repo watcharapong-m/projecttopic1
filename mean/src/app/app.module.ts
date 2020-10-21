@@ -18,6 +18,9 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { AllPlaceComponent } from './all-place/all-place.component';
 import { PopularPlaceComponent } from './popular-place/popular-place.component';
+import { BaseHtmlComponent } from './base-html/base-html.component';
+import { PlaceService } from './shared/services/place/place.service';
+import { PlaceComponent } from './place/place.component';
 
 export function appInitializerFactory(authService: AuthService) {
   return () => authService.checkTheUserOnTheFirstLoad();
@@ -25,7 +28,7 @@ export function appInitializerFactory(authService: AuthService) {
 
 @NgModule({
   imports: [BrowserAnimationsModule, HttpClientModule, SharedModule, AppRoutingModule],
-  declarations: [AppComponent, HeaderComponent, HomeComponent, DescriptionComponent, ReviewComponent, MainPageComponent, FooterComponent, AllPlaceComponent, PopularPlaceComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, DescriptionComponent, ReviewComponent, MainPageComponent, FooterComponent, AllPlaceComponent, PopularPlaceComponent, BaseHtmlComponent, PlaceComponent,],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -43,6 +46,7 @@ export function appInitializerFactory(authService: AuthService) {
       multi: true,
       deps: [AuthService],
     },
+    PlaceService,
   ],
   bootstrap: [AppComponent],
 })

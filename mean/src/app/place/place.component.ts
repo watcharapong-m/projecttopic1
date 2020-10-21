@@ -3,32 +3,21 @@ import { Router } from '@angular/router';
 import { PlaceService } from '@app/shared/services/place/place.service';
 
 @Component({
-  selector: 'app-main-page',
-  templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.css']
+  selector: 'app-place',
+  templateUrl: './place.component.html',
+  styleUrls: ['./place.component.css']
 })
-export class MainPageComponent implements OnInit {
+export class PlaceComponent implements OnInit {
 
   place: any = [];
-  popularplaces: any = [];
 
-  constructor(public route: Router, private placeService: PlaceService) {
-    // window.location.reload();
-    window.scroll(0, 0);
-  }
+  constructor(public route: Router, private placeService: PlaceService) { }
 
   ngOnInit(): void {
-
-    // window.location.reload();
 
     this.placeService.getPlaces().subscribe(data => {
       // อ่านค่าจาก JSON response ที่ส่งออกมา
       this.place = data;
-    });
-
-    this.placeService.getPopularPlaces().subscribe(data => {
-      // อ่านค่าจาก JSON response ที่ส่งออกมา
-      this.popularplaces = data;
     });
   }
 

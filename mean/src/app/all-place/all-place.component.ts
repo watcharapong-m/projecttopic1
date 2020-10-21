@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PLACES } from '@app/mock/mock-place';
-import { Place } from '@app/model/place';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PlaceService } from '@app/shared/services/place/place.service';
 
 @Component({
   selector: 'app-all-place',
@@ -9,65 +8,40 @@ import { Place } from '@app/model/place';
   styleUrls: ['./all-place.component.css'],
 })
 export class AllPlaceComponent implements OnInit {
-  // x = '';
-  province: Place[] = PLACES;
-  d: string [] = [];
-  test1: string [] = [];
 
-  test = [
-    {
-      id: 1,
-      name: 'ขอนแก่น',
-      place: [
-        {
-          id: 1,
-          name: 'x',
-          img: 'xxx'
-        },
-        {
-          id: 2,
-          name: 'y',
-          img: 'xxx'
-        },
-      ]
-    },
-    {
-      id: 2,
-      name: 'ชัยภูมิ',
-      place: [
-        {
-          id: 1,
-          name: 'a',
-          img: 'xxx'
-        },
-        {
-          id: 2,
-          name: 'b',
-          img: 'xxx'
-        },
-      ]
-    },
-  ];
+  d: number [] = [];
+  province: any = [];
+  place: any = [];
+  prov: any = [];
 
-  constructor(private activateroute: ActivatedRoute) {}
+  constructor(
+    private activateroute: ActivatedRoute,
+    public route: Router,
+    private placeService: PlaceService
+  ) {
+    // window.location.reload();
+    window.scroll(0, 0);
+  }
 
   ngOnInit(): void {
+    // window.scroll(0, 0);
     let x = this.activateroute.snapshot.params.dataObj;
     const obj =  JSON.parse(x);
-    console.log('x =', x);
 
     // tslint:disable-next-line: forin
     for (const key in obj) {
       this.d = obj[key];
-      // this.test1.push('2');
-      // this.test1 = this.test[obj[key]].name[obj[key]];
-      console.log('test =', this.test[obj[key]].place[obj[key]]);
-      console.log('key obj =', this.d);
     }
-    console.log('d =', this.d);
 
-    if (this.province) {
-
-    }
+    this.placeService.getProvinces().subscribe(data => {
+      // อ่านค่าจาก JSON response ที่ส่งออกมา
+      this.prov = data;
+      for (let index = 0; index < this.prov.length; index++) {
+        if (this.prov[index].id.toString() == this.d) {
+          this.province = data[index].province;
+          this.place = data[index].place;
+        }
+      }
+    });
   }
 }
