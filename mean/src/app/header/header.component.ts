@@ -13,7 +13,7 @@ import { AuthService } from '@app/shared/services';
 export class HeaderComponent {
   @Input() user: User | null = null;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) { localStorage.setItem('user', this.user + ''); }
 
   logout(): void {
     this.authService.signOut();

@@ -26,6 +26,7 @@ export class AuthService {
         tap(({ token, user }) => {
           this.setUser(user);
           this.tokenStorage.saveToken(token);
+          localStorage.setItem('user', user + '');
         }),
         pluck('user')
       );

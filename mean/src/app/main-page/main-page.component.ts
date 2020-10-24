@@ -40,4 +40,13 @@ export class MainPageComponent implements OnInit {
     this.route.navigate(['province', dataString]);
   }
 
+  gotoDescription(province: string, name: string) {
+    const dataObj = {
+      province: province,
+      name: name
+    };
+    const dataString = JSON.stringify(dataObj);
+    this.route.navigate(['description', dataString]);
+  }
+
 }

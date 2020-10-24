@@ -21,7 +21,7 @@ const routes: Routes = [
     component: MainPageComponent,
   },
   {
-    path: 'description',
+    path: 'description/:dataObj',
     component: DescriptionComponent,
   },
   {

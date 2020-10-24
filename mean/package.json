@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "serve": "node server",
+    "yarn": "node scripts/init-places.js && node scripts/init-popular.js && node scripts/init-province.js && yarn start",
     "start": "concurrently -c \"yellow.bold,green.bold\" -n \"SERVER,BUILD\" \"nodemon server\" \"ng build --watch\"",
     "build": "ng build --prod",
     "test": "ng test",
@@ -58,6 +59,7 @@
     "@angular/language-service": "^9.1.4",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
+    "@types/mongoose": "^5.7.36",
     "@types/node": "~12.12.14",
     "codelyzer": "^5.2.0",
     "concurrently": "^3.5.1",

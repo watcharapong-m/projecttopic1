@@ -44,4 +44,13 @@ export class AllPlaceComponent implements OnInit {
       }
     });
   }
+
+  gotoDescription(province: string, name: string) {
+    const dataObj = {
+      province: province,
+      name: name
+    };
+    const dataString = JSON.stringify(dataObj);
+    this.route.navigate(['description', dataString]);
+  }
 }
