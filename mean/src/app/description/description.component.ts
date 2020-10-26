@@ -20,6 +20,9 @@ export class DescriptionComponent implements OnInit {
   prov: any = [];
   obj: any = [];
 
+  name = '';
+  message = '';
+
   constructor(
     private activateroute: ActivatedRoute,
     public route: Router,
@@ -66,6 +69,11 @@ export class DescriptionComponent implements OnInit {
     //   console.log('d =', this.d);
     // }
     // console.log('d =', this.d);
+  }
+
+  submit() {
+    console.log('name =', this.name);
+    console.log('message =', this.message);
   }
 
 }
