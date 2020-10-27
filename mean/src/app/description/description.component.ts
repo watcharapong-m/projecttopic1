@@ -20,8 +20,13 @@ export class DescriptionComponent implements OnInit {
   prov: any = [];
   obj: any = [];
 
-  name = '';
-  message = '';
+  reviewer = {
+    name : '',
+    message : '',
+  };
+
+  reviews: any;
+
 
   constructor(
     private activateroute: ActivatedRoute,
@@ -39,6 +44,10 @@ export class DescriptionComponent implements OnInit {
     console.log('province =', this.getProvince);
     this.getName = this.obj.name;
     console.log('name =', this.getName);
+
+    this.placeService.getReviews().subscribe(data => {
+      this.reviews = data;
+    });
 
     this.placeService.getProvinces().subscribe(data => {
       // อ่านค่าจาก JSON response ที่ส่งออกมา
@@ -69,11 +78,28 @@ export class DescriptionComponent implements OnInit {
     //   console.log('d =', this.d);
     // }
     // console.log('d =', this.d);
+
+    // this.placeService.postReviews(this.review).subscribe((response: {}) =>
+    //   alert('บันทึกเรียบร้อย'),
+    // );
   }
 
-  submit() {
-    console.log('name =', this.name);
-    console.log('message =', this.message);
+  submit(place: any) {
+    let a = {
+      id: this.reviews.length + 1,
+      place_name: place,
+      review: {
+        name: this.reviewer.name,
+        message: this.reviewer.message
+      }
+    };
+    console.log('count =', this.reviews.length);
+    console.log('a =', a);
+    console.log('name =', this.reviewer.name);
+    console.log('message =', this.reviewer.message);
+    this.placeService.postReviews(a).subscribe((response: {}) =>
+      alert('บันทึกเรียบร้อย'),
+    );
   }
 
 }

@@ -19,17 +19,17 @@
                   <div class="row">
                       <div class="col-lg-12">
                           <div class="single_input">
-                              <input [(ngModel)]="name" name="name" style="background-color: lightgrey;" type="text" placeholder="Your Name" required>
+                              <input [(ngModel)]="reviewer.name" name="name" style="background-color: lightgrey;" type="text" placeholder="Your Name" required>
                           </div>
                       </div>
                       <div class="col-lg-12">
                           <div class="single_input">
-                              <textarea [(ngModel)]="message" name="message" style="background-color: lightgrey;" cols="30" rows="10"placeholder="Message" required></textarea>
+                              <textarea [(ngModel)]="reviewer.message" name="message" style="background-color: lightgrey;" cols="30" rows="10"placeholder="Message" required></textarea>
                           </div>
                       </div>
                       <div class="col-lg-12">
                           <div class="submit_btn">
-                              <button class="boxed-btn4" type="submit" [disabled]="name == '' || message == ''" (click)="submit()">submit</button>
+                              <button class="boxed-btn4" type="submit" [disabled]="reviewer.name == '' || reviewer.message == ''" (click)="submit(place.name)">submit</button>
                               <!-- <button type="button" disabled="disabled">test</button>
                               <div style="padding-top: 10px;"></div>
                               <button type="button">test</button>

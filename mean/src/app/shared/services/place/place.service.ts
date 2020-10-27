@@ -10,6 +10,7 @@ export class PlaceService {
   baseUrlPlace = '/api/place';
   baseUrlPopularPlace = '/api/popularplace';
   baseUrlProvince = '/api/province';
+  baseUrlReview = '/api/review';
 
   constructor(public http: HttpClient) { }
 
@@ -24,7 +25,12 @@ export class PlaceService {
   getProvinces(): Observable<any> {
     return this.http.get<any>(`${this.baseUrlProvince}/all`);
   }
-  // postStudents(data): Observable<any> {
-  //   return this.http.post<any>(`${this.baseUrl}`, JSON.stringify(data), this.httpOptions);
-  // }
+
+  getReviews(): Observable<any> {
+    return this.http.get<any>(`${this.baseUrlReview}/all`);
+  }
+
+  postReviews(data: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrlReview}`, JSON.stringify(data));
+  }
 }

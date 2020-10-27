@@ -3,13 +3,9 @@ const Joi = require('joi');
 const Review = require('../models/review.model');
 
 const reviewSchema = Joi.object({
+  id: Joi.string().required(),
   place_name: Joi.string().required(),
-  place: [
-    {
-      text: Joi.string().required(),
-      person_name: Joi.string().required(),
-    }
-  ]
+  review: {}
 })
 
 
@@ -21,8 +17,8 @@ module.exports = {
 }
 
 async function insert(review) {
-  student = await Joi.validate(review, reviewSchema, { abortEarly: false });
-  return await new Province(review).save();
+  review = await Joi.validate(review, reviewSchema, { abortEarly: false });
+  return await new Review(review).save();
 }
 
 async function get(_id) {
