@@ -12,7 +12,6 @@ export class PlaceService {
   baseUrlPlace = '/api/place';
   baseUrlPopularPlace = '/api/popularplace';
   baseUrlProvince = '/api/province';
-  baseUrlReview = '/api/review';
   baseUrlComment = '/api/comment';
 
   constructor(public http: HttpClient) { }
@@ -36,16 +35,8 @@ export class PlaceService {
     return this.http.get<any>(`${this.baseUrlProvince}/all`);
   }
 
-  getReviews(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrlReview}/all`);
-  }
-
   getComments(): Observable<any> {
     return this.http.get<any>(`${this.baseUrlComment}/all`);
-  }
-
-  postReviews(data: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrlReview}`, data, this.httpOptions);
   }
 
   postComments(data: any): Observable<any> {
