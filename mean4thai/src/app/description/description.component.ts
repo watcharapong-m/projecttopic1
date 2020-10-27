@@ -179,4 +179,19 @@ export class DescriptionComponent implements OnInit {
 
   }
 
+  deleteComment(name: any) {
+    let rowid;
+    for (let index = 0; index < this.reviews.length; index++) {
+      if (this.reviews[index].name == name) {
+        rowid = this.reviews[index]._id;
+      }
+    }
+    let a = {
+      _id: rowid,
+    };
+    this.placeService.deleteComment(a).subscribe(response => {
+      alert('ลบเรียบร้อย');
+    });
+  }
+
 }

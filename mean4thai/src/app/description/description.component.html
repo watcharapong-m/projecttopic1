@@ -55,7 +55,7 @@
                     <h4>{{ item.message }}</h4>
                     <span>
                       <label><p (click)="editdata(item)">แก้ไข</p></label>
-                      <label><p style="padding-left: 15px; color: red;">ลบ</p></label>
+                      <label><p (click)="deleteComment(item.name)" style="padding-left: 15px; color: red;">ลบ</p></label>
                     </span>
                     <div class="bordered_1px"></div>
                   </div>
