@@ -15,6 +15,8 @@ module.exports = {
   get,
   getAll,
   search,
+  deleteData,
+  updateData
 }
 
 async function insert(comment) {
@@ -34,4 +36,12 @@ async function search(key, value) {
   let query = {};
   query[key] = value;
   return await Comment.find(query);
+}
+
+async function deleteData(_id) {
+  return await Comment.findByIdAndDelete(_id);
+}
+
+async function updateData(_id,data) {
+  return Comment.findByIdAndUpdate(_id, data);
 }

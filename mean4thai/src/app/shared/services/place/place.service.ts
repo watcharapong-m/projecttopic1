@@ -51,4 +51,8 @@ export class PlaceService {
   postComments(data: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrlComment}`, data);
   }
+
+  updateComment(data: any): Observable<any> {
+    return this.http.put(`${this.baseUrlComment}/update/${data._id}`, data);
+  }
 }
